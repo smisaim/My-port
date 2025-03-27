@@ -1,0 +1,136 @@
+@import "tailwindcss";
+
+/* Theme variables */
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+    --border: 240 5.9% 90%;
+  }
+  .dark {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --border: 240 3.7% 15.9%;
+  }
+  * {
+    border-color: hsl(var(--border));
+    scroll-behavior: smooth !important;
+  }
+  body {
+    background: hsl(var(--background));
+    color: hsl(var(--foreground));
+  }
+}
+
+/* Utilities */
+@layer utilities {
+  .animate-spotlight {
+    animation: spotlight 2s ease 0.75s 1 forwards;
+  }
+  @keyframes spotlight {
+    0% {
+      opacity: 0;
+      transform: translate(-72%, -62%) scale(0.5);
+    }
+    100% {
+      opacity: 1;
+      transform: translate(-50%, -40%) scale(1);
+    }
+  }
+  /* For MagicButton animation */
+  .animate-spin {
+    animation: spin 2s linear infinite;
+  }
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  /* For BackgroundGradientAnimation */
+  .animate-first {
+    animation: first 30s infinite;
+  }
+  .animate-second {
+    animation: second 30s infinite;
+  }
+  .animate-third {
+    animation: third 30s infinite;
+  }
+  .animate-fourth {
+    animation: fourth 30s infinite;
+  }
+  .animate-fifth {
+    animation: fifth 30s infinite;
+  }
+  @keyframes first {
+    0%,
+    100% {
+      transform: rotate(0deg);
+    }
+    50% {
+      transform: rotate(360deg);
+    }
+  }
+  @keyframes second {
+    0%,
+    100% {
+      transform: rotate(0deg);
+    }
+    50% {
+      transform: rotate(-360deg);
+    }
+  }
+  @keyframes third {
+    0%,
+    100% {
+      transform: rotate(0deg);
+    }
+    50% {
+      transform: rotate(360deg);
+    }
+  }
+  @keyframes fourth {
+    0%,
+    100% {
+      transform: rotate(0deg);
+    }
+    50% {
+      transform: rotate(-360deg);
+    }
+  }
+  @keyframes fifth {
+    0%,
+    100% {
+      transform: rotate(0deg);
+    }
+    50% {
+      transform: rotate(360deg);
+    }
+  }
+  /* For InfiniteMovingCards */
+  .animate-scroll {
+    animation: scroll var(--animation-duration) linear infinite;
+    animation-direction: var(--animation-direction);
+  }
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+}
+
+/* Custom colors */
+@theme {
+  --color-black: #000;
+  --color-black-100: #000319;
+  --color-white: #fff;
+  --color-purple: #cbacf9;
+  --color-blue-100: #e4ecff;
+  --color-slate-950: #0f172a;
+}
